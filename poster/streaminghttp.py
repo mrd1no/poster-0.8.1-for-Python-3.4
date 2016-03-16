@@ -183,10 +183,10 @@ if hasattr(http.client, 'HTTPS'):
 
 def get_handlers():
     handlers = [StreamingHTTPHandler, StreamingHTTPRedirectHandler]
-    if hasattr(httplib, "HTTPS"):
+    if hasattr(http.client, "HTTPS"):
         handlers.append(StreamingHTTPSHandler)
     return handlers
-    
+
 def register_openers():
     """Register the streaming http handlers in the global urllib2 default
     opener object.
